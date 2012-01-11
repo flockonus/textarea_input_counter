@@ -1,1 +1,17 @@
-hi
+This aim to be jQuery plugin to a simple plugin that adds a counter for input and textarea, and also adds the limit, in a simple to use way, for both static and dynamicly added input fields.
+
+The use is simple as:
+
+    $.InputLimit().run()
+
+Or using configurations:
+
+    $.InputLimit({
+      attr     : 'data-input-limit',  // any string that may be HTML attribute
+      position : 'after',             // OR 'before'
+      classes  : 'limit_input',       // any valid class= attribute like 'counter blue'
+      tag      : 'span',              // any valid tag, 'div', 'p', etc
+      template : "(CUR/MAX)",         // any string, that may use reserved words CUR and/or MAX
+    }).run()
+
+See form-limit.html for better understanding!

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>lalalalalal </title>
 
-<link rel="stylesheet" href="stylesheets/style.css"/>
+<!-- link rel="stylesheet" href="stylesheets/style.css"/ -->
 
 <script type="text/javascript" src="javascript/jquery171.js"></script>
 <script type="text/javascript" src="javascript/form.js"></script>
@@ -15,11 +15,43 @@
 <h1>PLUGIN TEST</h1>
 
 <form>
+	<p>just some text</p>
 	<label for="first">A regular input field:</label>
-	<input type="text" id="first" data-input-limit="50" name="leEu" />
-	<p>some after</p>
-</form>	
+	<input type="text" id="first" data-input-limit="10" name="leEu"  /><br/>
+	<br/>
+	<textarea data-input-limit="30" name="leTxt"></textarea>
+	<p>an another text..</p>
+	<button id="bb">APPLY LIMITS, counter before</button>
+	<button id="ba">APPLY LIMITS, counter after</button>
+	<p>
+		Will only apply for the first time. That's when the plugin is configured and applied. Following calls are cheap, and do have no effect on buttons that have been binded
+	</p>
+	<button id="add">Add a button!</button>
+	<p>
+		And you can add more counters as you insert inputs and textareas!
+	</p>
+</form>
 
+<script type="text/javascript" charset="utf-8">
+	$('#bb').click(function(){
+		$.InputLimitCounter({
+			position: 'before'
+		}).run();
+		return false
+	})
+	
+	$('#ba').click(function(){
+		$.InputLimitCounter().run();
+		return false
+	})
+	
+	$('#add').click(function(){
+		$(this).after('<br/><input data-input-limit="'+((Math.random()*50)+1)+'" />')
+		return false
+	})
+	
+	
+</script>
 
 </body>
 </html>
