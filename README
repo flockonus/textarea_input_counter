@@ -1,4 +1,4 @@
-This aim to be jQuery plugin to a simple plugin that adds a counter for input and textarea, and also adds the limit, in a simple to use way, for both static and dynamicly added input fields.
+This aim to be jQuery plugin that adds a COUNTER for INPUT and TEXTAREA, and also adds maxlenght, in a simple to use way, for both static and dynamicly added input fields.
 
 The use is simple as:
 
@@ -15,3 +15,6 @@ Or using configurations:
     }).run()
 
 See form-limit.html for practical example and better understanding!
+
+* chose by default 'data-input-limit' attribute over 'maxlength', so only selected fields will have the counter added
+* textarea maxlength is only enforced on browsers that properly support this HTML5 attribute
