@@ -1,7 +1,8 @@
 // Usado para limitar o numeros de caracteres de qualquer campo de texto.
 
 
-/*
+/* InputLimitCounter v 0.1
+ * 
  * jQuery >1.4 Plugin
  * 
  * Use to dinamicaly limit maximum characters in a text input or text-area
@@ -42,18 +43,18 @@ if( jQuery ){
 		// private
 		var ensureCounterPresence = function(jE ) {
 			if( config.position == 'after' ){
-				console.log(' position after')
+				//console.log(' position after')
 				if( !jE.next().length || !jE.next().is(config.classesSelector)  ){ // if there is none, create
 		    	var counterTag = "<"+config.tag+" class='"+config.classes+"'>"+config.template+"</"+config.tag+">"
-		    	console.log('  do create!', counterTag)
+		    	//console.log('  do create!', counterTag)
 		    	jE.after( counterTag )
 		    }
 			} else {
-				console.log(' position before')
+				//console.log(' position before')
 				if( !jE.prev().length || !jE.prev().is(config.classesSelector)  ){ // if there is none, create
-		    	console.log('  do create!')
+		    	//console.log('  do create!')
 		    	var counterTag = "<"+config.tag+" class='"+config.classes+"'>"+config.template+"</"+config.tag+">"
-		    	console.log( " ", counterTag )
+		    	//console.log( " ", counterTag )
 		    	jE.before( counterTag )
 		    }
 			}
@@ -87,7 +88,7 @@ if( jQuery ){
 		    else
 		    	input.prev().text(counterText)
 		  } catch(e){
-		  	console.log(e)
+		  	console.log('ERR InputLimitCounter:', e)
 		  }
 		}
 		
@@ -103,11 +104,11 @@ if( jQuery ){
 				if( !jE.attr(config.attr+'-done') ){
 					jE.attr(config.attr+'-done', '1')
 					jE.attr('maxlength', jE.attr(config.attr)  )
-					console.log('found!', jE)
+					//console.log('found!', jE)
 					jE.keyup( countAndRedefineMax )
 					countAndRedefineMax(e)
 				} else {
-					console.log('already has Event!', jE)
+					//console.log('already has Event!', jE)
 				}
 			})
 			return publicMethods

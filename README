@@ -2,11 +2,11 @@ This aim to be jQuery plugin to a simple plugin that adds a counter for input an
 
 The use is simple as:
 
-    $.InputLimit().run()
+    $.InputLimitCounter().run()
 
 Or using configurations:
 
-    $.InputLimit({
+    $.InputLimitCounter({
       attr     : 'data-input-limit',  // any string that may be HTML attribute
       position : 'after',             // OR 'before'
       classes  : 'limit_input',       // any valid class= attribute like 'counter blue'
@@ -14,4 +14,4 @@ Or using configurations:
       template : "(CUR/MAX)",         // any string, that may use reserved words CUR and/or MAX
     }).run()
 
-See form-limit.html for better understanding!
+See form-limit.html for practical example and better understanding!
