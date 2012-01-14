@@ -35,13 +35,17 @@
 <script type="text/javascript" charset="utf-8">
 	$('#bb').click(function(){
 		$.InputLimitCounter({
-			position: 'before'
+			template: "REM char[S] remaining (MAX total)",
+			position: 'before',
 		}).run();
 		return false
 	})
 	
 	$('#ba').click(function(){
-		$.InputLimitCounter().run();
+		$.InputLimitCounter({
+			template: "REM char[S] remaining (MAX total)",
+			position: 'after',
+		}).run();
 		return false
 	})
 	

@@ -11,7 +11,7 @@ Or using configurations:
       position : 'after',             // OR 'before'
       classes  : 'limit_input',       // any valid class= attribute like 'counter blue'
       tag      : 'span',              // any valid tag, 'div', 'p', etc
-      template : "(CUR/MAX)",         // any string, that may use reserved words CUR and/or MAX
+      template : "(CUR/MAX)",         // may use reserved words CUR, MAX, REM, [S]. The last being plural for remaining
     }).run()
 
 See form-limit.html for practical example and better understanding!

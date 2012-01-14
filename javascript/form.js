@@ -1,7 +1,7 @@
 // Usado para limitar o numeros de caracteres de qualquer campo de texto.
 
 
-/* InputLimitCounter v 0.1
+/* InputLimitCounter v 0.1.2
  * 
  * jQuery >1.4 Plugin
  * 
@@ -27,7 +27,7 @@ if( jQuery ){
 		config.position = config.position || 'after'
 		config.classes = config.classes || 'limit_input'
 		config.tag = config.tag || 'span'
-		config.template = config.template || "(CUR/MAX)"
+		config.template = config.template || "(CUR/MAX)" //also, REM as reamining # of chars and [S] as pluralizer (add an 's')
 		
 		// "pale small" => ".pale.small"
 		config.classesSelector = config.classes.split(' ')
@@ -78,9 +78,18 @@ if( jQuery ){
 		    ensureCounterPresence( input )
 		    
 		    // set templated counter
+	    	var rem = input_limit - input.val().length
 		    var counterText = ''+config.template
+		    
 		    counterText = counterText.replace(/CUR/, input.val().length )
 		    counterText = counterText.replace(/MAX/, input_limit )
+		    
+	    	if( rem > 1 )
+	    		counterText = counterText.replace(/\[S\]/g, 's' )
+    		else
+    			counterText = counterText.replace(/\[S\]/g, '' )
+	    		
+    		counterText = counterText.replace(/REM/, rem )
 		    
 		      
 		    if( config.position == 'after' )
